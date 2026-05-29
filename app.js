@@ -110,10 +110,10 @@ const networkAccountOverrides = {
 };
 
 const results = [
-  { brand: "BucketGolf", focus: "TikTok Shop affiliate content", reach: "2.8M", sales: "$92K", result: "6.4x ROAS" },
-  { brand: "Spark Catch", focus: "Creator-led product demos", reach: "1.9M", sales: "$71K", result: "5.7x ROAS" },
-  { brand: "Shotgun Roulette", focus: "Affiliate campaign testing", reach: "1.3M", sales: "$48K", result: "4.9x ROAS" },
-  { brand: "Crunch Cup", focus: "UGC conversion angles", reach: "1.6M", sales: "$63K", result: "5.2x ROAS" }
+  { brand: "BucketGolf", focus: "TikTok Shop affiliate content", reach: "12M+", sales: "12M+", result: "300+" },
+  { brand: "Spark Catch", focus: "Creator-led product demos", reach: "8M+", sales: "2M+", result: "250+" },
+  { brand: "Shotgun Roulette", focus: "Affiliate campaign testing", reach: "10M+", sales: "15M+", result: "400+" },
+  { brand: "Crunch Cup", focus: "UGC conversion angles", reach: "6M+", sales: "3M+", result: "200+" }
 ];
 
 const renderVideoGrid = () => {
