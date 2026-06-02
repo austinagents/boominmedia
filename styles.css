@@ -1597,29 +1597,6 @@ h1 {
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
 }
 
-.tiktok-ui {
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  height: 13px;
-  position: absolute;
-  right: 9px;
-  width: 13px;
-  z-index: 2;
-}
-
-.tiktok-like {
-  background: #ff315f;
-  bottom: 74px;
-}
-
-.tiktok-comment {
-  bottom: 50px;
-}
-
-.tiktok-share {
-  bottom: 26px;
-}
-
 .video-card-meta {
   align-items: center;
   color: var(--ink);

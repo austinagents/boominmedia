@@ -129,9 +129,6 @@ const renderVideoGrid = () => {
           <div class="video-frame" data-video-src="${video.videoSrc}"${video.fallbackVideoSrc ? ` data-fallback-video-src="${video.fallbackVideoSrc}"` : ""}>
             <img class="video-thumbnail" src="${video.posterSrc}" alt="${video.brand} video thumbnail">
             <span class="play-dot" aria-hidden="true"></span>
-            <span class="tiktok-ui tiktok-like" aria-hidden="true"></span>
-            <span class="tiktok-ui tiktok-comment" aria-hidden="true"></span>
-            <span class="tiktok-ui tiktok-share" aria-hidden="true"></span>
             <strong class="video-caption">${video.caption}</strong>
           </div>
           <div class="video-card-meta">
@@ -149,12 +146,23 @@ const renderVideoGrid = () => {
 const bindVideoCardPlayback = () => {
   document.querySelectorAll(".video-frame").forEach((frame) => {
     frame.addEventListener("click", () => {
+      document.querySelectorAll(".video-frame.is-playing").forEach((activeFrame) => {
+        if (activeFrame === frame) {
+          return;
+        }
+
+        const activeVideo = activeFrame.querySelector("video");
+        activeVideo?.pause();
+        activeVideo?.remove();
+        activeFrame.classList.remove("is-playing");
+      });
+
       let video = frame.querySelector("video");
 
       if (!video) {
         video = document.createElement("video");
         video.className = "video-asset";
-        video.muted = true;
+        video.muted = false;
         video.playsInline = true;
         video.preload = "none";
         video.addEventListener("ended", () => {
@@ -177,8 +185,9 @@ const bindVideoCardPlayback = () => {
         frame.prepend(video);
       }
 
-        frame.classList.add("is-playing");
-        video.play();
+      video.muted = false;
+      frame.classList.add("is-playing");
+      video.play().catch(() => {});
     });
   });
 };
